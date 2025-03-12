@@ -44,10 +44,10 @@ function App() {
   }, []);
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <>
+    <div className="w-full h-[100vh] flex justify-center">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-y-4 max-w-md mx-auto p-4 border rounded"
+        className="flex flex-col gap-y-4 w-md p-4 h-96 border rounded mt-[5%]"
       >
         <input
           {...register("name")}
@@ -78,10 +78,11 @@ function App() {
             {errors.selectedPokemon.message}
           </p>
         )}
+
         <button
           disabled={isSubmitting}
           type="submit"
-          className="bg-green-500 disabled:bg-gray-400 py-2 rounded text-black"
+          className="bg-green-500 disabled:bg-gray-400 py-2 rounded text-black mt-auto"
         >
           Submit
         </button>
@@ -91,7 +92,7 @@ function App() {
         onClose={() => setIsModalOpen(false)}
         pokemons={pokemons}
       />
-    </>
+    </div>
   );
 }
 
